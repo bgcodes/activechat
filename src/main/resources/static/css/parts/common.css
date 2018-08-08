@@ -1,0 +1,45 @@
+body {
+    animation-duration: 0.4s;
+    animation-name: showPage;
+    background-color: var(--color-main-background);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+@keyframes showPage {
+    0% {filter: brightness(0);}
+    100% {filter: brightness(1);}
+}
+
+main {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 50px);
+    padding: 50px;
+}
+
+
+/* text style */
+.activechat_logo {
+    font-style: italic;
+    letter-spacing: -3px;
+    text-decoration: underline;
+}
+
+.username {
+    font-style: italic;
+    letter-spacing: -3px;
+}
+
+.msg {
+    color: var(--color-form-msg-font);
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+}
+
+.errmsg {
+    color: var(--color-form-errmsg-font);
+}

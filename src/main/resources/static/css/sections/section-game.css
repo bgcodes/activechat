@@ -1,0 +1,113 @@
+#game_board {
+    width: 100%;
+    max-width: calc(100vh - 244px);
+    min-width: 290px;
+    background-color: var(--color-game-board-background);
+}
+
+.row {
+    display: flex;
+    height: 12.5%;
+}
+
+.odd_row .field {
+    margin-left: 12.5%;
+}
+
+.even_row .field {
+    margin-right: 12.5%;
+}
+
+.field {
+    background-color: var(--color-game-board-field);
+    width: 12.5%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.field div {
+    box-sizing: border-box;
+    display: none;
+    border-radius: 50%;
+    height: 90%;
+    width: 90%;
+
+}
+
+.field div.selected {
+    box-shadow: 0 0 10px 5px var(--color-game-board-piece-selected);
+}
+
+.user_turn div {
+    box-shadow: 0 0 5px 1px var(--color-game-board-piece-selected);
+}
+
+.opponent_turn div {
+    box-shadow: 0 0 5px 1px var(--color-game-board-piece-opponent-turn);
+}
+
+.white_piece {
+    background-color: var(--color-game-board-piece-white);
+}
+
+.white_crowned_piece {
+    background-color: var(--color-game-board-piece-white);
+    border: 6px double var(--color-game-board-field);
+}
+
+.black_piece {
+    background-color: var(--color-game-board-piece-black);
+}
+
+.black_crowned_piece {
+    background-color: var(--color-game-board-piece-black);
+    border: 6px double var(--color-game-board-field);
+}
+
+.possible_move {
+    box-shadow: 0 0 10px 5px var(--color-game-board-piece-selected) inset;
+}
+
+.game_section footer {
+    display: none;
+    padding: 12px 25px 20px 25px;
+}
+
+
+/* ********************tab-open-new******************** */
+.game_section .container {
+    overflow: auto;
+}
+
+#stats_area {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: monospace;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+td, th {
+    border: none;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-section-list-background);
+}
+
+td.row_header {
+    text-decoration: underline;
+}
+
+td.row_header_small {
+    padding-left: 30px;
+    font-size: small;
+}

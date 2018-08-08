@@ -1,0 +1,43 @@
+header {
+    background-color: var(--color-header-nav-background);
+    box-sizing: border-box;
+    color: var(--color-header-nav-font);
+    display: flex;
+    height: 50px;
+}
+
+header h2 {
+    align-self: center;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+header nav {
+    background-color: inherit;
+    display: flex;
+}
+
+header nav a {
+    background-color: inherit;
+    color: inherit;
+    cursor: pointer;
+    flex: 1;
+    font-size: large;
+    display: flex;
+    width: 120px;
+    transition: 0.3s;
+    outline: none;
+    text-decoration: none;
+}
+
+header nav a i {
+    margin: auto;
+}
+
+header nav a:hover {
+    background-color: var(--color-header-nav-hover);
+}
+
+header nav a.active {
+    background-color: var(--color-header-nav-active);
+}

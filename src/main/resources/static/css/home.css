@@ -1,0 +1,49 @@
+@import 'variables/colors.css';
+@import 'parts/common.css';
+@import 'parts/form.css';
+@import 'parts/main-header.css';
+@import 'parts/scrollbar.css';
+@import 'parts/tab.css';
+@import 'sections/section-nav.css';
+@import 'sections/section-chat.css';
+@import 'sections/section-game.css';
+
+main {
+    align-items: stretch;
+    flex-flow: row wrap;
+}
+
+main section {
+    background-color: var(--color-section-background);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 150px);
+    min-height: 400px;
+}
+
+main section header {
+    background-color: var(--color-tab-nav-background);
+    color: var(--color-tab-nav-font);
+}
+
+main section header i {
+    font-size: large;
+    margin: auto;
+}
+
+main section .container {
+    background-color: inherit;
+    flex: 1;
+    padding: 22px 25px;
+}
+
+.nav_section {
+    min-width: 160px;
+    width: 160px;
+}
+
+.chat_section, .game_section {
+    min-width: 340px;
+    width: calc((100% - 160px) / 2);
+}

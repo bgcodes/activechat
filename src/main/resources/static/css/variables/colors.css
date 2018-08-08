@@ -1,0 +1,56 @@
+:root {
+    --color-main-background: rgb(43, 43, 43);
+
+    /* main header-nav */
+    --color-header-nav-background: rgb(32, 32, 32);
+    --color-header-nav-font: rgb(255, 255, 255);
+    --color-header-nav-hover: rgb(36, 36, 36);
+    --color-header-nav-active: rgb(43, 43, 43);
+
+    /* tab header-nav */
+    --color-tab-nav-background: rgb(241, 241, 241);
+    --color-tab-nav-font: rgb(0, 0, 0);
+    --color-tab-nav-hover: rgb(221, 221, 221);
+    --color-tab-nav-active: rgb(204, 204, 204);
+
+    /* form */
+    --color-form-input-border: rgb(190, 190, 190);
+    --color-form-submit-font: rgb(255, 255, 255);
+    --color-form-submit: rgb(76, 175, 80);
+    --color-form-submit-hover: rgb(69, 160, 73);
+
+    /* form messages */
+    --color-form-msg-font: rgb(0, 128, 0);
+    --color-form-errmsg-font: rgb(220, 0, 10);
+
+    /* scrollbar */
+    --color-scrollbar-track: rgb(204, 204, 204);
+    --color-scrollbar-thumb: rgb(136, 136, 136);
+    --color-scrollbar-thumb-hover: rgb(85, 85, 85);
+
+    /* section */
+    --color-section-background: rgb(204, 204, 204);
+
+    --color-section-list-background: rgb(221, 221, 221);
+    --color-section-list-font: rgb(0, 0, 0);
+    --color-section-list-hover: rgb(231, 231, 231);
+    --color-section-list-active: rgb(204, 204, 204);
+
+    /* chat messages */
+    --color-chat-message: rgb(136, 136, 136);
+    --color-my-chat-message: rgb(76, 175, 80);
+
+    /* alert */
+    --color-alert-first: rgb(221, 221, 221);
+    --color-alert-second: rgb(0, 128, 0);
+
+    /* game board */
+    --color-game-board-background: rgb(255, 255, 255);
+    --color-game-board-field: rgb(128, 128, 128);
+
+    --color-game-board-piece-white: rgb(255, 255, 255);
+    --color-game-board-piece-black: rgb(0, 0, 0);
+
+    --color-game-board-piece-selected: rgb(10, 202, 52);
+    --color-game-board-piece-opponent-turn: rgb(202, 53, 38);
+}

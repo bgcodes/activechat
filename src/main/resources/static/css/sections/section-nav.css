@@ -1,0 +1,53 @@
+.nav_section .container {
+    padding: 10px 10px;
+}
+
+#open_conversations_list {
+    background-color: var(--color-section-list-background);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100%;
+    max-height: calc(100vh - 220px);
+}
+
+#open_conversations_list div {
+    background-color: transparent;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#open_conversations_list div:hover {
+    background-color: var(--color-section-list-hover);
+}
+
+#open_conversations_list div.active {
+    background-color: var(--color-section-list-active);
+}
+
+#open_conversations_list div p {
+    color: var(--color-section-list-font);
+    margin: 0;
+    flex: 1;
+    font-weight: bold;
+    padding: 10px 0 10px 10px;
+    white-space: nowrap;
+    font-size: small;
+}
+
+#open_conversations_list div i {
+    padding: 0 0 0 10px;
+    margin: auto;
+    color: var(--color-alert-first);
+    animation-name: alert;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes alert {
+    0%   {color: var(--color-alert-first);}
+    25%  {color: var(--color-alert-second);}
+    50%  {color: var(--color-alert-first);}
+    75%  {}
+    100% {}
+}

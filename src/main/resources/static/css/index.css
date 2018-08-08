@@ -1,0 +1,15 @@
+@import 'variables/colors.css';
+@import 'parts/common.css';
+@import 'parts/form.css';
+@import 'parts/main-header.css';
+@import 'parts/scrollbar.css';
+@import 'parts/tab.css';
+
+.access_panel {
+    height: 321px;
+    width: 300px;
+}
+
+.about_panel {
+    /*TODO - about page*/
+}

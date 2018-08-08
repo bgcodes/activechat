@@ -1,0 +1,29 @@
+nav.tab_nav {
+    background-color: var(--color-tab-nav-background);
+    box-sizing: border-box;
+    display: flex;
+    height: 50px;
+}
+
+.tab_nav button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    font-size: large;
+    outline: none;
+    transition: 0.3s;
+}
+
+.tab_nav button:hover {
+    background-color: var(--color-tab-nav-hover);
+}
+
+.tab_nav button.active {
+    background-color: var(--color-tab-nav-active);
+}
+
+.tab_content {
+    background: var(--color-tab-nav-active);
+    padding: 20px 25px;
+}

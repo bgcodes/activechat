@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="shortcut icon" href="img/ac.PNG">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="css/home.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="js/main-app.js" type="module"></script>
+</head>
+<body>
+
+<header>
+    <h2 class="username"></h2>
+    <nav>
+        <a class="active" href="home.html"><i class="fas fa-home"></i></a>
+        <a href="home.html"><i class="fas fa-wrench"></i></a>
+        <a href="index.html" id="logout_button"><i class="fas fa-power-off"></i></a>
+    </nav>
+</header>
+
+<main>
+    <section class="nav_section">
+        <header class="section_header tab_nav">
+            <button class="tab_link_button active" id="tab_default_button"><i class="fas fa-list"></i></button>
+            <button class="tab_link_button" id="tab_open_conversation_button"><i class="fas fa-plus"></i></button>
+        </header>
+        <div class="container">
+            <div id="open_conversations_list"></div>
+        </div>
+    </section>
+
+    <section class="chat_section">
+        <header class="section_header">
+            <i class="tab-default fas fa-comments"></i>
+            <i class="tab-open-new fas fa-search"></i>
+        </header>
+        <div class="tab-default container" id="chat_message_list"></div>
+        <form class="tab-open-new" id="search_form">
+            <input id="search_form_phrase" type="text" name="search" placeholder="search...">
+        </form>
+        <div class="tab-open-new container" id="conversations_list"></div>
+        <footer>
+            <form class="tab-default" id="send_message_form">
+                <textarea id="send_message_form_message" placeholder="message..."></textarea>
+                <input id="send_message_form_submit" type="submit" value="Send">
+            </form>
+            <form class="tab-open-new" id="new_conv_form">
+                <div class="msg" id="new_conv_form_msg"></div>
+                <input id="new_conv_form_username" type="text" placeholder="username...">
+                <div class="msg errmsg" id="new_conv_form_errmsg"></div>
+                <input id="new_conv_form_submit" type="submit" value="Send invitation">
+            </form>
+        </footer>
+    </section>
+
+    <section class="game_section">
+        <header class="section_header">
+            <i class="tab-default fas fa-chess-pawn"></i>
+            <i class="tab-open-new fas fa-chart-pie"></i>
+        </header>
+        <div class="tab-default container">
+            <div id="game_board">
+                <div class="row odd_row">
+                    <div class="field" id="row-1_col-2" data-row="1" data-col="2"><div></div></div>
+                    <div class="field" id="row-1_col-4" data-row="1" data-col="4"><div></div></div>
+                    <div class="field" id="row-1_col-6" data-row="1" data-col="6"><div></div></div>
+                    <div class="field" id="row-1_col-8" data-row="1" data-col="8"><div></div></div>
+                </div>
+                <div class="row even_row">
+                    <div class="field" id="row-2_col-1" data-row="2" data-col="1"><div></div></div>
+                    <div class="field" id="row-2_col-3" data-row="2" data-col="3"><div></div></div>
+                    <div class="field" id="row-2_col-5" data-row="2" data-col="5"><div></div></div>
+                    <div class="field" id="row-2_col-7" data-row="2" data-col="7"><div></div></div>
+                </div>
+                <div class="row odd_row">
+                    <div class="field" id="row-3_col-2" data-row="3" data-col="2"><div></div></div>
+                    <div class="field" id="row-3_col-4" data-row="3" data-col="4"><div></div></div>
+                    <div class="field" id="row-3_col-6" data-row="3" data-col="6"><div></div></div>
+                    <div class="field" id="row-3_col-8" data-row="3" data-col="8"><div></div></div>
+                </div>
+                <div class="row even_row">
+                    <div class="field" id="row-4_col-1" data-row="4" data-col="1"><div></div></div>
+                    <div class="field" id="row-4_col-3" data-row="4" data-col="3"><div></div></div>
+                    <div class="field" id="row-4_col-5" data-row="4" data-col="5"><div></div></div>
+                    <div class="field" id="row-4_col-7" data-row="4" data-col="7"><div></div></div>
+                </div>
+                <div class="row odd_row">
+                    <div class="field" id="row-5_col-2" data-row="5" data-col="2"><div></div></div>
+                    <div class="field" id="row-5_col-4" data-row="5" data-col="4"><div></div></div>
+                    <div class="field" id="row-5_col-6" data-row="5" data-col="6"><div></div></div>
+                    <div class="field" id="row-5_col-8" data-row="5" data-col="8"><div></div></div>
+                </div>
+                <div class="row even_row">
+                    <div class="field" id="row-6_col-1" data-row="6" data-col="1"><div></div></div>
+                    <div class="field" id="row-6_col-3" data-row="6" data-col="3"><div></div></div>
+                    <div class="field" id="row-6_col-5" data-row="6" data-col="5"><div></div></div>
+                    <div class="field" id="row-6_col-7" data-row="6" data-col="7"><div></div></div>
+                </div>
+                <div class="row odd_row">
+                    <div class="field" id="row-7_col-2" data-row="7" data-col="2"><div></div></div>
+                    <div class="field" id="row-7_col-4" data-row="7" data-col="4"><div></div></div>
+                    <div class="field" id="row-7_col-6" data-row="7" data-col="6"><div></div></div>
+                    <div class="field" id="row-7_col-8" data-row="7" data-col="8"><div></div></div>
+                </div>
+                <div class="row even_row">
+                    <div class="field" id="row-8_col-1" data-row="8" data-col="1"><div></div></div>
+                    <div class="field" id="row-8_col-3" data-row="8" data-col="3"><div></div></div>
+                    <div class="field" id="row-8_col-5" data-row="8" data-col="5"><div></div></div>
+                    <div class="field" id="row-8_col-7" data-row="8" data-col="7"><div></div></div>
+                </div>
+            </div>
+            <div class="msg" id="game_msg"></div>
+            <div class="msg errmsg" id="game_errmsg"></div>
+        </div>
+        <div class="tab-open-new container">
+            <div id="stats_area">
+                <table class="stats_overview">
+                    <tr>
+                        <td class="row_header">Messages:</td>
+                        <td id="messages_count"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header">Games:</td>
+                        <td id="games_count"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header row_header_small">draws:</td>
+                        <td id="games_draws"></td>
+                    </tr>
+                </table>
+                <table class="stats">
+                    <tr>
+                        <th></th>
+                        <th id="user1"></th>
+                        <th id="user2"></th>
+                    </tr>
+                    <tr>
+                        <td class="row_header">Messages send:</td>
+                        <td id="user1_msg_send"></td>
+                        <td id="user2_msg_send"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header row_header_small">first message:</td>
+                        <td id="user1_first_message"></td>
+                        <td id="user2_first_message"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header row_header_small">last Message:</td>
+                        <td id="user1_last_message"></td>
+                        <td id="user2_last_message"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header">Games won:</td>
+                        <td id="user1_games_won"></td>
+                        <td id="user2_games_won"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header row_header_small">as white:</td>
+                        <td id="user1_as_white"></td>
+                        <td id="user2_as_white"></td>
+                    </tr>
+                    <tr>
+                        <td class="row_header row_header_small">as black:</td>
+                        <td id="user1_as_black"></td>
+                        <td id="user2_as_black"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <form class="tab-default" id="new_game_form">
+                <div class="msg" id="new_game_form_msg"></div>
+                <select id="new_game_form_white">
+                    <option value="" selected disabled>select white player...</option>
+                    <option id="new_game_form_white_opt_1"></option>
+                    <option id="new_game_form_white_opt_2"></option>
+                </select>
+                <div class="msg errmsg" id="new_game_form_errmsg"></div>
+                <input id="new_game_form_submit" type="submit" value="Create new game">
+            </form>
+        </footer>
+    </section>
+</main>
+
+</body>
+</html>

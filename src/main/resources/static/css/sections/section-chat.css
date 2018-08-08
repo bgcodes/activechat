@@ -1,0 +1,123 @@
+#chat_message_list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0 25px 22px 25px;
+}
+
+.chat_message {
+    background-color: var(--color-chat-message);
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.chat_message_details {
+    display: none;
+}
+
+.chat_message_details div {
+    padding: 4px 4px 0 4px;
+    white-space: nowrap;
+}
+
+div.chat_message_author {
+    flex: 1;
+    font-weight: bold;
+}
+
+div.chat_message_date {
+    flex: 1;
+    font-size: small;
+    text-align: right;
+}
+
+pre.chat_message_content {
+    margin: 0;
+    overflow-wrap: break-word;
+    padding: 10px;
+    white-space: pre-wrap;
+}
+
+.my_message {
+    background-color: var(--color-my-chat-message);
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.chat_section footer {
+    padding: 12px 25px 20px 25px;
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    max-height: 200px;
+    min-height: 50px;
+    outline: none;
+    overflow-y: auto;
+    resize: none;
+    width: 100%;
+}
+
+
+/* ********************tab-open-new******************** */
+
+#search_form {
+    background-color: inherit;
+    padding: 22px 25px;
+}
+
+#conversations_list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0 15px 0 25px;
+}
+
+#conversations_list div {
+    background-color: var(--color-section-list-background);
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    max-height: 40px;
+    min-height: 40px;
+    transition: 0.3s;
+}
+
+#conversations_list div.already_open {
+    color: var(--color-form-submit);
+    font-weight: bold;
+}
+
+#conversations_list div.already_open i {
+    display: none;
+}
+
+#conversations_list div p {
+    flex: 1;
+    font-size: small;
+    margin: 0;
+    padding: 10px;
+}
+
+#conversations_list div i {
+    color: var(--color-form-submit);
+    margin: 0;
+    padding: 10px;
+}
+
+#conversations_list div p:hover {
+    background-color: var(--color-section-list-hover);
+}
+
+#conversations_list div p.active {
+    background-color: var(--color-section-list-active);
+}
+
+#conversations_list div i:hover {
+    background-color: var(--color-section-list-hover);
+    color: var(--color-form-submit);
+}
